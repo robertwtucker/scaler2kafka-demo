@@ -3,8 +3,8 @@ camel:
     main-run-controller: true
 
 file:
-  inputDir: var/input
-  outputDir: var/output
+  inputDir: ./var/input
+  outputDir: ./var/output
 
 kafka:
   brokers: localhost:9092

@@ -14,6 +14,8 @@ repositories {
 
 dependencies {
 	implementation 'org.apache.camel.springboot:camel-spring-boot-starter:3.9.0'
+	implementation 'org.apache.camel:camel-kafka:3.9.0'
+	implementation 'org.apache.camel:camel-undertow:3.9.0'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 

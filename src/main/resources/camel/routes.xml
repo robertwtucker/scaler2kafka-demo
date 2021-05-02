@@ -1,0 +1,12 @@
+<routes xmlns="http://camel.apache.org/schema/spring">
+    <route id="scaler2kafka">
+        <from uri="undertow:{{undertow.protocol}}://{{undertow.host}}:{{undertow.port}}{{undertow.resourceUrl}}"/>
+        <log message="Received input from Scaler"/>
+        <to uri="kafka:{{kafka.topic}}?brokers={{kafka.brokers}}&amp;groupId={{kafka.producer.groupId}}"/>
+    </route>
+    <route id="kafka2file">
+        <from uri="kafka:{{kafka.topic}}?brokers={{kafka.brokers}}&amp;groupId={{kafka.consumer.groupId}}&amp;seekTo={{kafka.consumer.seekTo}}"/>
+        <log message="Received message from Kafka, writing to file"/>
+        <to uri="file://{{file.outputDir}}"/>
+    </route>
+</routes>
