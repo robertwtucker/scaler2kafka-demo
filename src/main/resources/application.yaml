@@ -1,0 +1,22 @@
+camel:
+  springboot:
+    main-run-controller: true
+
+file:
+  inputDir: var/input
+  outputDir: var/output
+
+kafka:
+  brokers: localhost:9092
+  topic: inspire-out
+  consumer:
+    groupId: demo-consumers
+    seekTo: end
+  producer:
+    groupId: demo-producers
+
+undertow:
+  protocol: http
+  host: 0.0.0.0
+  port: 10101
+  resourceUrl: /bridge
