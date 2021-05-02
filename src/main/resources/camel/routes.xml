@@ -1,7 +1,7 @@
 <routes xmlns="http://camel.apache.org/schema/spring">
     <route id="scaler2kafka">
         <from uri="undertow:{{undertow.protocol}}://{{undertow.host}}:{{undertow.port}}{{undertow.resourceUrl}}"/>
-        <log message="Received input from Scaler"/>
+        <log message="Received input from Scaler, sending to Kafka"/>
         <to uri="kafka:{{kafka.topic}}?brokers={{kafka.brokers}}&amp;groupId={{kafka.producer.groupId}}"/>
     </route>
     <route id="kafka2file">
